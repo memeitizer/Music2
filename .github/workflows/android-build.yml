@@ -19,13 +19,13 @@ jobs:
     - name: Setup Android SDK
       uses: android-actions/setup-android@v2
 
-    - name: Install Gradle
+    - name: Install Gradle 8
       run: |
         sudo apt update
         sudo apt install -y gradle
 
-    - name: Generate Gradle Wrapper
-      run: gradle wrapper
+    - name: Generate Gradle Wrapper with Gradle 8
+      run: gradle wrapper --gradle-version 8.0
 
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
